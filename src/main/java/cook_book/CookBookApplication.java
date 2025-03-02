@@ -1,8 +1,8 @@
-package cook_book.cook_book;
+package cook_book;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+	
 @SpringBootApplication
 public class CookBookApplication {
 
