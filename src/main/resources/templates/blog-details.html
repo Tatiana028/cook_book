@@ -8,11 +8,26 @@
 <body>
 <header th:insert="blocks/header.html :: header"></header>
 
-<div class="container mt-5">
-    <div th:each="el : ${post}" class="alert alert-info mt-2 ">
-        <h3 th:text="${el.title}"></h3>
-        <a th:href="'/blog/' +${el.id} + '/edit'" class="btn btn-warning">Edit</a>
-        <a th:href="'/blog/' +${el.id} + '/delete'" class="btn btn-warning">Delete</a>
+<div class="container mt-5 p-4 border border-2 rounded-3" style="max-width: 1200px;">
+    <div th:each="el : ${post}" class="row g-0 mb-5">
+        <div class="col-md-5">
+            <img th:src="${el.imageUrl}"
+                 alt="Recipe photo"
+                 class="img-fluid mb-3"
+                 style="object-fit: cover; max-height: 400px;">
+
+            <ul th:if="${el.ingredients} != null"
+                th:each="ing : ${#strings.listSplit(el.ingredients, ',')}">
+                <li th:text="${ing}"></li>
+            </ul>
+        </div>
+
+        <div class="col-md-7">
+            <h3>How to cook</h3>
+            <p th:text="${el.full_text}">
+
+            </p>
+        </div>
     </div>
 </div>
 

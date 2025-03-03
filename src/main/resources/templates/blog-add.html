@@ -11,8 +11,10 @@
 <div class="container mt-5 mb-5">
   <h1>Add recipe </h1>
   <form action="/blog/add" method="post">
-  <input type="text" name="title" placeholder="type title" class="form-control"><br>
-  <textarea name="full_text" placeholder="type recipe" class="form-control"></textarea><br>
+  <input type="text" name="title" placeholder="recipe title" class="form-control"><br>
+  <textarea name="full_text" placeholder="recipe instructions" class="form-control"></textarea><br>
+    <input type="text" name="imageUrl" placeholder="Image URL" class="form-control"><br>
+    <textarea name="ingredients" placeholder="List of ingredients" class="form-control"></textarea><br>
   <button type="submit" class="btn btn-success">Add recipe</button><br>
   </form>
 </div>

@@ -31,9 +31,24 @@ public class BlogController {
         return "blog-add";
     }
 
+    @GetMapping("/toast-recipe")
+    public String blogRecipe(Model model){
+        return "toast-recipe-exs";
+    }
+
+    @GetMapping("/pasta-recipe")
+    public String blogRecipe1(Model model){
+        return "pasta-recipe-exs";
+    }
+
+    @GetMapping("/crepes-recipe")
+    public String blogRecipe2(Model model){
+        return "crepes-recipe-exs";
+    }
+
     @PostMapping("/blog/add")
-    public String blogAddPost(@RequestParam String title, @RequestParam String full_text, Model model){
-        Post post = new Post(title, full_text);
+    public String blogAddPost(@RequestParam String title, @RequestParam String full_text,@RequestParam String imageUrl, @RequestParam String ingredients, Model model){
+        Post post = new Post(title, full_text, imageUrl, ingredients);
         postRepository.save(post);
         return "redirect:/blog" ;
     }

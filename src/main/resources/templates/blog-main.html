@@ -15,31 +15,50 @@
     <!-- Первые три рецепта, прописанные «жёстко» -->
     <div class="row">
         <div class="col-md-4 mb-3">
-            <img src="https://images.101cookbooks.com/best-gnocchi-recipe-1.jpg?w=420&auto=compress&auto=format"  class="recipe-img" alt="Recipe 1">
-            <h3>First recipe</h3>
+            <div class="p-3 border border-2 rounded-3" style="height: 100%;">
+                <img src="http://dolcevitablog.ru/wp-content/uploads/2022/08/frantsuzskij_tost_pain_perdu_dolcevitablogru_55-1-e1660764864549.jpg"  class="recipe-img" alt="Recipe 1" style="width: 100%; height: 400px; object-fit: cover;">
+                <h3>Toast</h3>
+                <a href="/toast-recipe"
+                   class="btn"
+                   style="background-color: #6F4E37; color: #fff; border: none;">Details</a>
+            </div>
         </div>
         <div class="col-md-4 mb-3">
-            <img src="http://dolcevitablog.ru/wp-content/uploads/2025/01/pasta_s_pesto_iz_rukkoly_i_inzhirom_dolcevitablogru_4-1-e1737326332171.jpg" class="recipe-img" alt="Recipe 2">
-            <h3>Second recipe</h3>
+            <div class="p-3 border border-2 rounded-3" style="height: 100%;">
+                <img src="http://dolcevitablog.ru/wp-content/uploads/2025/01/pasta_s_pesto_iz_rukkoly_i_inzhirom_dolcevitablogru_4-1-e1737326332171.jpg"  class="recipe-img" alt="Recipe 1" style="width: 100%; height: 400px; object-fit: cover;">
+                <h3>Pasta</h3>
+                <a href="/pasta-recipe"
+                   class="btn"
+                   style="background-color: #6F4E37; color: #fff; border: none;">Details</a>
+            </div>
         </div>
         <div class="col-md-4 mb-3">
-            <img src="http://dolcevitablog.ru/wp-content/uploads/2022/04/chizkeik_s_kozjim_syrom_i_smorodinoj_dolcevitablogru_65.jpg" class="recipe-img" alt="Recipe 3">
-            <h3>Third recipe</h3>
+            <div class="p-3 border border-2 rounded-3" style="height: 100%;">
+                <img src="http://dolcevitablog.ru/wp-content/uploads/2024/03/tonkie_blinchiki_dolcevitablogru_15.jpg"
+                     class="recipe-img" alt="Recipe 1" style="width: 100%; height: 400px; object-fit: cover;">
+                <h3>Crepes</h3>
+                <a href="/crepes-recipe"
+                   class="btn"
+                   style="background-color: #6F4E37; color: #fff; border: none;">Details</a>
+            </div>
         </div>
     </div>
 
-    <!-- Остальные рецепты из базы (posts) -->
     <div class="row">
         <div th:each="el : ${posts}" class="col-md-4 mb-3">
             <div class="card h-100">
-                <img class="card-img-top" alt="Recipe image">
+                <img th:src="${el.imageUrl}"
+                     class="card-img-top"
+                     alt="Recipe image"
+                     style="height: 400px; object-fit: cover;">
 
                 <div class="card-body">
                     <h5 class="card-title" th:text="${el.title}"></h5>
                     <p class="card-text">
                         <!-- Краткое описание, если нужно -->
                     </p>
-                    <a th:href="@{/blog/{id}(id=${el.id})}" class="btn btn-warning">Details</a>
+                    <a th:href="@{/blog/{id}(id=${el.id})}" class="btn"
+                       style="background-color: #6F4E37; color: #fff; border: none;">Details</a>
                 </div>
             </div>
         </div>

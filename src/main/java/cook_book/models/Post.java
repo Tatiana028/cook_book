@@ -12,19 +12,36 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO )
     private Long id;
 
-    private String title, full_text;
+    private String title, full_text, imageUrl, ingredients;
 
     public Post() {
     }
 
-    public Post(String title, String full_text) {
-        this.id = id;
+    public Post(String title, String full_text, String imageUrl, String ingredients) {
         this.title = title;
         this.full_text = full_text;
+        this.imageUrl = imageUrl;
+        this.ingredients = ingredients;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
     }
 
     public void setId(Long id) {
