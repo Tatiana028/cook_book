@@ -8,15 +8,57 @@
 <body>
 <header th:insert="blocks/header.html :: header"></header>
 
-<div class="container mt-5 mb-5">
-  <h1>Add recipe </h1>
-  <form action="/blog/add" method="post">
-  <input type="text" name="title" placeholder="recipe title" class="form-control"><br>
-  <textarea name="full_text" placeholder="recipe instructions" class="form-control"></textarea><br>
-    <input type="text" name="imageUrl" placeholder="Image URL" class="form-control"><br>
-    <textarea name="ingredients" placeholder="List of ingredients" class="form-control"></textarea><br>
-  <button type="submit" class="btn btn-success">Add recipe</button><br>
-  </form>
+<div class="container mt-5" style="max-width: 1200px;">
+  <div class="card shadow-sm">
+    <div class="card-body p-4">
+      <h2 class="card-title mb-4 text-center">Add a New Recipe</h2>
+
+      <form action="/blog/add" method="post">
+        <!-- Title -->
+        <div class="mb-3">
+          <label for="title" class="form-label">Recipe Title</label>
+          <input type="text" id="title" name="title"
+                 class="form-control"
+                 placeholder="e.g. Spaghetti Carbonara"
+                 required>
+        </div>
+
+        <!-- Instructions -->
+        <div class="mb-3">
+          <label for="full_text" class="form-label">Instructions</label>
+          <textarea id="full_text" name="full_text"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Describe how to prepare the dish"
+                    required></textarea>
+        </div>
+
+        <!-- Image URL -->
+        <div class="mb-3">
+          <label for="imageUrl" class="form-label">Image URL</label>
+          <input type="text" id="imageUrl" name="imageUrl"
+                 class="form-control"
+                 placeholder="https://example.com/image.jpg">
+        </div>
+
+        <!-- Ingredients -->
+        <div class="mb-4">
+          <label for="ingredients" class="form-label">List of Ingredients</label>
+          <textarea id="ingredients" name="ingredients"
+                    class="form-control"
+                    rows="3"
+                    placeholder="Write each ingredient separate with commas"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-lg px-4">
+            Add recipe
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 
 <div th:insert="blocks/footer.html :: footer"></div>

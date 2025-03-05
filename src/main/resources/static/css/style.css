@@ -1,13 +1,42 @@
-/* Ограничиваем ширину контейнера, чтобы страница не растягивалась на весь экран */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    padding-bottom: 0px;
+}
+
 .my-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Задаём изображениям фиксированную максимальную высоту и обрезку */
 .recipe-img {
     width: 100%;
-    max-height: 400px;
+    height: 400px;
     object-fit: cover;
-    display: block;
+}
+
+.recipe-img-details {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.button-details {
+    background-color: #6F4E37;
+    color: #fff;
+    border: none;"
+}
+
+.container {
+    height: 100%;
 }

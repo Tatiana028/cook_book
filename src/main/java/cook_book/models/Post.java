@@ -1,9 +1,6 @@
 package cook_book.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Post {
@@ -12,7 +9,14 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO )
     private Long id;
 
-    private String title, full_text, imageUrl, ingredients;
+    private String title;
+
+    @Column(length = 5000)
+    private String full_text;
+    private String imageUrl;
+
+    @Column(length = 5000)
+    private String ingredients;
 
     public Post() {
     }
